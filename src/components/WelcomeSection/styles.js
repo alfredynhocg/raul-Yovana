@@ -38,6 +38,13 @@ export const styScrollWrapper = css`
       bottom: 46px;
       text-align: center;
       color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      letter-spacing: 1px;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 6px 16px;
+      border-radius: 20px;
     }
 
     .text {
@@ -47,14 +54,14 @@ export const styScrollWrapper = css`
     @media screen and (max-width: 414px) {
       .text {
         bottom: 80px;
-        font-size: 12px;
+        font-size: 13px;
       }
     }
 
     @media screen and (max-width: 360px) {
       .text {
         bottom: 60px;
-        font-size: 12px;
+        font-size: 13px;
       }
     }
   }
