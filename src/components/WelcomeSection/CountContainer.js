@@ -6,14 +6,12 @@ import { styMargin } from './styles';
 
 function CountContainer() {
   const { days, hours, minutes, seconds, timeHasRunOut, isEventOver } = useDateCountdown();
-  const finalText = isEventOver ? 'SUDAH' : 'SEDANG';
-
   if (timeHasRunOut)
     return (
       <>
         <div className="row">
-          <div className="col-md-12" style={{ fontSize: '20px' }}>
-            {`ACARA ${finalText} BERLANGSUNG!`}
+          <div className="col-md-12" style={{ fontSize: '20px', color: '#e8c97a' }}>
+            {isEventOver ? '¡La boda ya se celebró!' : '¡La boda está en curso!'}
           </div>
         </div>
         <ButtonLive />

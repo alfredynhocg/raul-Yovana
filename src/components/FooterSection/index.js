@@ -34,6 +34,9 @@ function FooterSection({ isInvitation }) {
         <div className="container">
           <div className="row copyright">
             <div className="col-md-12 text-center">
+              <p style={{ color: '#c9a84c', fontSize: '18px', letterSpacing: '2px', marginBottom: '6px' }}>
+                #RaulYYovana2026
+              </p>
               <p>
                 <small className="block">&copy; 2026 Raul &amp; Yovana</small>
               </p>

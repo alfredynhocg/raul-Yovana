@@ -2,8 +2,11 @@ import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
 import { styWrapper } from './styles';
 
-const Groom = 'https://picsum.photos/seed/raul/400/400';
-const Bride = 'https://picsum.photos/seed/yovana/400/400';
+import GroomImg from '@assets/images/novios/raul.jpg';
+import BrideImg from '@assets/images/novios/yovana.jpg';
+
+const Groom = GroomImg;
+const Bride = BrideImg;
 
 function HelloSection({ isInvitation }) {
   const finalSubtitle = isInvitation

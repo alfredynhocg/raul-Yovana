@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fondo circular oscuro -->
+  <circle cx="32" cy="32" r="32" fill="#1a1208"/>
+
+  <!-- Borde dorado elegante -->
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#e8c97a" stroke-width="0.4" opacity="0.5"/>
+
+  <!-- Iniciales R & Y con fuente cursiva usando text -->
+  <text
+    x="32"
+    y="38"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="22"
+    font-style="italic"
+    font-weight="bold"
+    fill="url(#goldGrad)"
+    text-anchor="middle"
+    letter-spacing="1"
+  >R&amp;Y</text>
+
+  <!-- Pequeño diamante decorativo abajo -->
+  <polygon points="32,55 35,51 32,48 29,51" fill="#e8c97a" opacity="0.8"/>
+
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#fff5cc"/>
+      <stop offset="50%"  stop-color="#e8c97a"/>
+      <stop offset="100%" stop-color="#c9a84c"/>
+    </linearGradient>
+  </defs>
+</svg>

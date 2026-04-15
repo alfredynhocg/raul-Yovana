@@ -1,5 +1,14 @@
 import { css, keyframes } from '@emotion/core';
 
+const fadeInUp = keyframes`
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
+
+export const stySection = css`
+  animation: ${fadeInUp} 0.9s ease-out both;
+`;
+
 const animation = keyframes`
   0% { right: -300px; opacity: 0;}
   50% { right: 50px; opacity: 0.5;}

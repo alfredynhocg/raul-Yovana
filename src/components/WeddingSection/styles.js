@@ -1,7 +1,13 @@
-import { css } from '@emotion/core';
+import { css, keyframes } from '@emotion/core';
 import Background from '@assets/images/bg-wedding.jpg';
 
+const fadeInUp = keyframes`
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
+
 export const styWrapper = css`
+  animation: ${fadeInUp} 0.9s ease-out both;
   background-image: url(${Background});
   background-size: cover;
   background-position: center;
@@ -56,7 +62,7 @@ export const styButtonWrapper = css`
     color: #fff;
     font-weight: 500px;
     border-radius: 24px;
-    background: #f14e95;
+    background: #c9a84c;
     padding: 8px 16px;
   }
 

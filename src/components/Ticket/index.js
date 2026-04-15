@@ -15,43 +15,43 @@ function TicketData({ guest, configData }) {
           </div>
         </div>
         <div class="details">
-          <div class="tinfo">Nama</div>
+          <div class="tinfo">Nombre</div>
           <div class="tdata name">{guest.name}</div>
-          <div class="tinfo">Keterangan</div>
+          <div class="tinfo">Categoría</div>
           <div class="tdata">{guest.desc}</div>
-          <div class="tinfo">Syukuran Pernikahan / Shift</div>
+          <div class="tinfo">Ceremonia / Turno</div>
           <div class="tdata">
-            {`${configData.shiftType?.[guest.shift]} / ${guest.shift}` || '11.00 WIB - 13.00 WIB'}
+            {`${configData.shiftType?.[guest.shift]} / ${guest.shift}` || '09:00 AM - El Alto, Bolivia'}
           </div>
-          {/* attendance */}
+          {/* asistencia */}
           {guest.isAttended ? (
             <>
-              <div class="tinfo">Sudah hadir pada</div>
+              <div class="tinfo">Asistió el</div>
               <div class="tdata">
                 <span class="badge badge-success">{guest.attendedAt}</span>
               </div>
             </>
           ) : null}
-          {/** souvenir */}
+          {/* recuerdo */}
           {guest.isExchanged ? (
             <>
-              <div class="tinfo">Sudah menukarkan souvenir pada</div>
+              <div class="tinfo">Recuerdo recibido el</div>
               <div class="tdata">
                 <span class="badge badge-success">{guest.exchangedAt}</span>
               </div>
             </>
           ) : null}
-          {/* Additional info */}
-          <div class="tinfo">Penting</div>
+          {/* Información importante */}
+          <div class="tinfo">Importante</div>
           <div class="tdata additional">
             <ul style={{ paddingLeft: '16px' }}>
               <li>
-                {`Setiap tamu yang hadir wajib menunjukkan QRCode ini sebagai pengganti buku tamu untuk untuk meminimalisir kontak fisik melalui pena.`}
+                Cada invitado debe presentar este código QR a su llegada como registro de asistencia.
               </li>
               <li style={{ textTransform: 'uppercase' }}>
-                Dalam rangka mematuhi protokol kesehatan,
-                <span style={{ color: '#f14e95', textTransform: 'uppercase' }}>
-                  {` 1 undangan hanya berlaku untuk 2 orang tamu`}
+                Esta invitación es válida para
+                <span style={{ color: '#c9a84c', textTransform: 'uppercase' }}>
+                  {` 2 personas`}
                 </span>
               </li>
             </ul>
@@ -60,7 +60,7 @@ function TicketData({ guest, configData }) {
         </div>
       </div>
       <Link to={`/?type=invitation&to=${guest.name}&code=${guest.code}`}>
-        <button className="btn primary">{`< Kembali ke Homepage`}</button>
+        <button className="btn primary">{`< Volver al inicio`}</button>
       </Link>
     </div>
   );

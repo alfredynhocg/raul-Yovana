@@ -7,7 +7,7 @@
   "scripts": {
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby build",
-    "develop": "NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
+    "develop": "cross-env NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -30,6 +30,7 @@
     "react-qr-code": "^1.0.2"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "eslint-config-jquery": "^3.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.20.2",

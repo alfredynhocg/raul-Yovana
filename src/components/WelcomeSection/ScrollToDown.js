@@ -10,7 +10,7 @@ function ClickToSeeDetail({ loading, onClick }) {
         <div className="button">
           <span></span>
         </div>
-        <span className="text">{loading ? 'Cargando...' : 'Ver Detalles del Evento'}</span>
+        <span className="text">{loading ? 'Cargando...' : 'Ver Detalles de la Boda'}</span>
       </section>
     </div>
   );

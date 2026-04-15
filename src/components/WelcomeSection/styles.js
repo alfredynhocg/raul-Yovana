@@ -1,5 +1,131 @@
 import { css, keyframes } from '@emotion/core';
-import Background from '@assets/images/boda_opt.jpg';
+import Background from '@assets/images/boda_opt.png';
+
+const ringsUnite = keyframes`
+  0%   { transform: scale(0.85) translateY(6px); opacity: 0.6; }
+  40%  { transform: scale(1.08) translateY(-3px); opacity: 1; }
+  60%  { transform: scale(1.04) translateY(-1px); }
+  80%  { transform: scale(1.01) translateY(0px); }
+  100% { transform: scale(1) translateY(0px); opacity: 1; }
+`;
+
+const diamondShine = keyframes`
+  0%   { filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
+  20%  { filter: drop-shadow(0 0 8px rgba(255,255,255,0.9)) drop-shadow(0 0 16px rgba(255,220,100,0.8)); }
+  40%  { filter: drop-shadow(0 0 2px rgba(255,255,255,0.3)); }
+  60%  { filter: drop-shadow(0 0 12px rgba(255,255,255,1)) drop-shadow(0 0 24px rgba(200,180,255,0.9)); }
+  80%  { filter: drop-shadow(0 0 3px rgba(255,255,255,0.4)); }
+  100% { filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
+`;
+
+const floatRings = keyframes`
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-6px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+`;
+
+const titleReveal = keyframes`
+  0%   { opacity: 0; transform: translateY(20px) scale(0.95); letter-spacing: 12px; }
+  60%  { opacity: 1; transform: translateY(-3px) scale(1.02); letter-spacing: 4px; }
+  100% { opacity: 1; transform: translateY(0px) scale(1); letter-spacing: 2px; }
+`;
+
+const titleShimmer = keyframes`
+  0%   { background-position: -400px center; }
+  100% { background-position: 400px center; }
+`;
+
+const subtitleFade = keyframes`
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0px); }
+`;
+
+const heartBeat = keyframes`
+  0%   { transform: scale(1); }
+  15%  { transform: scale(1.25); }
+  30%  { transform: scale(1); }
+  45%  { transform: scale(1.15); }
+  60%  { transform: scale(1); }
+  100% { transform: scale(1); }
+`;
+
+export const styTitleNames = css`
+  margin-bottom: 0px;
+  font-size: 100px;
+  line-height: 1.5;
+  font-family: 'Cookie', cursive;
+  background: linear-gradient(
+    90deg,
+    #c9a84c 0%,
+    #e8c97a 30%,
+    #fff5cc 50%,
+    #e8c97a 70%,
+    #c9a84c 100%
+  );
+  background-size: 400px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation:
+    ${titleReveal} 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both,
+    ${titleShimmer} 5s ease-in-out 1.8s infinite;
+
+  @media screen and (max-width: 500px) {
+    font-size: 54px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 40px;
+  }
+`;
+
+export const stySubtitleBoda = css`
+  font-family: 'Cookie', cursive;
+  margin: 0;
+  font-size: 30px;
+  background: linear-gradient(
+    90deg,
+    #c9a84c 0%,
+    #e8c97a 30%,
+    #fff5cc 50%,
+    #e8c97a 70%,
+    #c9a84c 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: ${subtitleFade} 1s ease-out 0.1s both;
+
+  @media screen and (max-width: 500px) {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 28px;
+  }
+`;
+
+export const styHeartAmpersand = css`
+  display: inline-block;
+  animation: ${heartBeat} 2.5s ease-in-out 2s infinite;
+  -webkit-text-fill-color: #e8c97a;
+`;
+
+export const styWeddingLogo = css`
+  animation:
+    ${ringsUnite} 1.4s ease-out both,
+    ${diamondShine} 3s ease-in-out 1.6s infinite,
+    ${floatRings} 4s ease-in-out 1.6s infinite;
+  max-width: 80px;
+  margin-bottom: 24px;
+  cursor: default;
+
+  &:hover {
+    animation:
+      ${diamondShine} 0.6s ease-in-out infinite,
+      ${floatRings} 1.5s ease-in-out infinite;
+  }
+`;
 
 export const styHero = css`
   width: 100%;
@@ -153,20 +279,7 @@ export const styBackground = css`
 
 export const styWrapper = css`
   color: #fff;
-  margin-top: -8em;
-
-  img {
-    max-width: 80px;
-    margin-bottom: 24px;
-  }
-
-  h1 {
-    margin-bottom: 0px;
-    font-size: 100px;
-    line-height: 1.5;
-    font-family: 'Cookie', cursive;
-    color: #fff;
-  }
+  margin-top: 0em;
 
   h2 {
     color: #fff;
@@ -174,13 +287,6 @@ export const styWrapper = css`
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 30px;
-  }
-
-  h4 {
-    font-family: 'Cookie', cursive;
-    margin: 0;
-    color: #fff;
-    font-size: 30px;
   }
 
   .getting-married {
@@ -205,7 +311,7 @@ export const styWrapper = css`
   }
 
   a {
-    color: #f14e95;
+    color: #c9a84c;
   }
 
   @media screen and (max-width: 330px) {
@@ -230,16 +336,16 @@ export const styWrapperCount = css`
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: rgba(241, 78, 149, 0.8);
+  background: rgba(30, 20, 10, 0.45);
+  border: 1px solid rgba(232, 201, 122, 0.5);
   margin: 8px;
   border-radius: 50%;
   position: relative;
-  animation: pulse 1s ease infinite;
-  color: #fff;
+  color: #e8c97a;
 
   h3 {
     font-size: 30px;
-    color: #fff;
+    color: #e8c97a;
     margin: 20px 0 0 0;
   }
 
@@ -274,12 +380,25 @@ export const styMargin = (px) => css`
   margin: ${px};
 `;
 
+export const styDivider = css`
+  width: 100%;
+  max-width: 300px;
+  margin: -8px auto 0 auto;
+  opacity: 0;
+  animation: ${subtitleFade} 1s ease-out 1s both;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+`;
+
 export const styButtonWrapper = css`
   display: flex;
   justify-content: center;
 
   .btn {
-    background: #f14e95;
+    background: #c9a84c;
     color: #fff;
     border: none;
   }
